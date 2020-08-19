@@ -1,0 +1,2 @@
+# Team-031-Group-A-EduMentor
+Edu-mentor is a College/University mentorship platform, where users can place the request based on their mentorship needs and course and mentors can accept/tutor or offer services based on their qualifications and speciality. A tutor can be a professional in the field like a lecturer, top-performing students or an experienced worker in related field/course. Students are either college or university students of any degree level.
