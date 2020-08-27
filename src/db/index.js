@@ -6,7 +6,6 @@ class Database {
     this.mongoose = dependencyManager.get("mongoose");
     this.connect(username, password);
   }
-
   async connect(username, password) {
     this.mongoose.Promise = global.Promise;
     this.mongoose.connect(`mongodb+srv://${username}:${password}@edumentor.5kxd0.mongodb.net/<dbname>?retryWrites=true&w=majority`);
