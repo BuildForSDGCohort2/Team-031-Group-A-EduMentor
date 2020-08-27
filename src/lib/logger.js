@@ -1,4 +1,4 @@
-const { createLogger, format, transports } = require("winston");
+const { createLogger, format, transports, } = require("winston");
 
 const {
   combine, timestamp, label, prettyPrint,
@@ -13,7 +13,7 @@ const createTransports = (config) => {
       new transports.File({
         filename: path.join("../logs", "logs.txt"),
         level: config.level,
-      }),
+      })
     );
   }
 
@@ -21,7 +21,7 @@ const createTransports = (config) => {
     transportTypes.push(
       new transports.Console({
         level: config.level,
-      }),
+      })
     );
   }
 
@@ -33,9 +33,9 @@ module.exports = {
   create: (config) => new createLogger({
     transports: createTransports(config),
     format: combine(
-      label({ label: "BTC-Engine" }),
+      label({ label: "BTC-Engine", }),
       timestamp(),
-      prettyPrint(),
+      prettyPrint()
     ),
   }),
 };
