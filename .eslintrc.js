@@ -1,5 +1,5 @@
-{
-  "extends": ["airbnb"],
+module.exports = {
+  "extends": ["airbnb-base"],
   "env": {
     "node": true,
     "es6": true
@@ -8,5 +8,5 @@
     "linebreak-style": 0,
     "quotes": ["error", "double"]
   }
-}
+};
 
