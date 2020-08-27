@@ -1,6 +1,6 @@
 function DependencyManager() {
-  this.dependencyMap = {};
-  this.dependencyCache = {};
+  this.dependencyMap = new Map();
+  this.dependencyCache = new Map();
 }
 
 DependencyManager.prototype.register = (dependencyName, constructor) => {
@@ -12,25 +12,25 @@ DependencyManager.prototype.register = (dependencyName, constructor) => {
     throw new Error(`${dependencyName}: Dependency constructor is not a function`);
   }
 
-  this.dependencyMap[dependencyName] = constructor;
+  this.dependencyMap.set(dependencyName, constructor);
 };
 
 DependencyManager.prototype.get = (dependencyName) => {
   let dependency;
-  if (this.dependencyMap[dependencyName] === undefined) {
+  if (typeof this.dependencyMap.get(dependencyName) === "undefined") {
     throw new Error("Trying to get unknown dependency");
   }
 
-  if (this.dependencymap[dependencyName] !== "function") {
+  if (typeof this.dependencymapget(dependencyName) !== "function") {
     throw new Error(`${dependencyName}: constructor is not a function`);
   }
 
-  if (this.dependencyCache[dependencyName] === undefined) {
-    const dependencyConstructor = this.dependencyMap[dependencyName];
+  if (typeof this.dependencyCache.get(dependencyName) === "undefined") {
+    const dependencyConstructor = this.dependencyMap.get(dependencyName);
     dependency = dependencyConstructor(this);
 
     if (dependency) {
-      this.dependencyCache[dependencyName] = dependency;
+      this.dependencyCache.set(dependencyName, dependency);
     }
   }
   return dependency;
