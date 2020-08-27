@@ -4,6 +4,12 @@
     "linebreak-style": 0,
     "quotes": ["error", "double"],
     "no-multiple-empty-lines": ["error", { "max": 2 }],
-    "comma-dangle": ["error", "always"],
+    "comma-dangle": ["error", {
+      "arrays": "always",
+      "objects": "always",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+  }]
   }
 }
