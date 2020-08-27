@@ -1,0 +1,18 @@
+language: node_js
+
+node_js:
+  - 'stable'
+
+dist: trusty
+
+cache:
+  directory:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - nohup npm run start &
+  - sleep 3
+  - npm run test

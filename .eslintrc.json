@@ -1,0 +1,18 @@
+{
+  "extends": ["airbnb"],
+  // "env": {
+  //   "node": true,
+  //   "es6": true
+  // },
+  "rules": {
+    "linebreak-style": 0,
+    "quotes": ["error", "double"]
+  }
+  // "settings": {
+  //   "import/resolver": {
+  //     "node": {
+  //       "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  //     }
+  //   }
+  // }
+}
