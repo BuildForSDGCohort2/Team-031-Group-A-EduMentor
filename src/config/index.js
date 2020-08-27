@@ -4,11 +4,11 @@ module.exports = {
 	logging: {
 		development: {
 			console: true,
-			level: 'info'
+			level: "info"
 		},
 		production: {
 			file: true,
-			level: 'info'
+			level: "info"
 		}
 	},
 	developmentDb: {

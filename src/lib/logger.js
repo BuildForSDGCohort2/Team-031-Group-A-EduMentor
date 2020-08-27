@@ -1,6 +1,6 @@
-const {createLogger, format, transports} = require('winston');
+const {createLogger, format, transports} = require("winston");
 const {combine, timestamp, label, prettyPrint} = format;
-const path = require('path');
+const path = require("path");
 
 const createTransports = (config) => {
 	const transportTypes = [];
@@ -8,7 +8,7 @@ const createTransports = (config) => {
 	if(config.file) {
 		transportTypes.push(
 			new transports.File({
-				filename: path.join('../logs', 'logs.txt'),
+				filename: path.join("../logs", "logs.txt"),
 				level: config.level
 			})
 		);
@@ -30,7 +30,7 @@ module.exports = {
 		return new createLogger({
 			transports: createTransports(config),
 			format: combine(
-				label({ label: 'BTC-Engine'}),
+				label({ label: "BTC-Engine"}),
 				timestamp(),
 				prettyPrint()
 			)
