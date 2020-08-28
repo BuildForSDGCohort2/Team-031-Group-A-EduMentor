@@ -1,0 +1,20 @@
+{
+  "extends": ["airbnb-base"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "global-require": 0,
+    "quotes": ["error", "double"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
