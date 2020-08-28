@@ -30,5 +30,5 @@ app.use((err, req, res, next) => {
 const hostname = process.env.HOST;
 const port = process.env.PORT;
 app.listen(port, hostname, (e) => {
-  if (e) { logger.info(e); } else logger.info(`listening at http://${hostname}:${port}`);
+  if (e) { logger.info(e); } else { logger.info(`listening at http://${hostname}:${port}`); }
 });
