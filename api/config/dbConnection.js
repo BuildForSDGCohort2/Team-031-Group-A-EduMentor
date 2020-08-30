@@ -1,20 +1,33 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 import logger from "./winstonlog";
 
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config();
+class Database {
+  constructor(host) {
+    this.mongoose = mongoose;
+    this.options = { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true };
+    this.connect(host);
+  }
+
+  /**
+   * @param {String} - Database connection URL
+   * @description - Initiates a DB connection based on provided URI
+  */
+  async connect(host) {
+    try {
+      await this.mongoose.connect(host, this.options);
+
+      this.mongoose.connection.on("connected", () => {
+        logger.info("Database connected");
+      });
+    } catch (error) {
+      logger.info(`Error connecting to Database: ${error}`);
+    }
+    // Close connection on process termination
+    process.on("SIGINT", () => {
+      this.mongoose.connection.close();
+      logger.info("Database connection closed due to NodeJS process termination.");
+    });
+  }
 }
 
-// We need to define the DB_URL
-const uri = process.env.DB_URL;
-
-// Connection establishment
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
-  .then(() => logger.info("Database Connection established successfully"))
-  .catch((err) => logger.info("Error occurred in db connection:", err));
-
-// Models
-// const db = mongoose.connection;
-
-export default mongoose;
+module.exports = Database;
