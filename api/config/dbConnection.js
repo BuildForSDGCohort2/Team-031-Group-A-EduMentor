@@ -13,15 +13,10 @@ class Database {
    * @description - Initiates a DB connection based on provided URI
   */
   async connect(host) {
-    try {
-      await this.mongoose.connect(host, this.options);
+    this.mongoose.connect(host, this.options)
+      .then(() => logger.info("Database connected"))
+      .catch((error) => logger.info(`Error connecting to Database: ${error}`));
 
-      this.mongoose.connection.on("connected", () => {
-        logger.info("Database connected");
-      });
-    } catch (error) {
-      logger.info(`Error connecting to Database: ${error}`);
-    }
     // Close connection on process termination
     process.on("SIGINT", () => {
       this.mongoose.connection.close();
