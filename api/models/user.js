@@ -2,6 +2,16 @@ import { Schema, model } from "mongoose";
 import bcrypt from "bcryptjs";
 
 const profileSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    lowercase: true,
+    trim: true,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
   profileImage: String,
   city: {
     type: String,
@@ -22,16 +32,6 @@ const profileSchema = new Schema({
 
 const userSchema = new Schema({
   email: {
-    type: String,
-    required: true,
-    lowercase: true,
-    trim: true,
-  },
-  phoneNumber: {
-    type: String,
-    required: true,
-  },
-  username: {
     type: String,
     required: true,
     lowercase: true,

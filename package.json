@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/proxybee/Team-031-Group-A-EduMentor.git"
+    "url": "git+https://github.com/BuildForSDGCohort2/Team-031-Group-A-EduMentor.git"
   },
   "keywords": [],
   "author": "team-031-group-a",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/proxybee/Team-031-Group-A-EduMentor/issues"
+    "url": "https://github.com/BuildForSDGCohort2/Team-031-Group-A-EduMentor"
   },
-  "homepage": "https://github.com/proxybee/Team-031-Group-A-EduMentor#readme",
+  "homepage": "https://github.com/BuildForSDGCohort2/Team-031-Group-A-EduMentor#readme",
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/node": "^7.10.5",
