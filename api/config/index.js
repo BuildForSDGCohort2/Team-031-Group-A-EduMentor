@@ -1,6 +1,9 @@
+import dotenv from "dotenv";
+
+dotenv.config();
+
 module.exports = {
   port: process.env.PORT,
   nodeEnv: process.env.NODE_ENV,
-  devDbUri: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@edumentor.5kxd0.mongodb.net/edumentor?retryWrites=true&w=majority`,
-  prodDbUri: "",
+  DbUrl: process.env.DB_URL,
 };

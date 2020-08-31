@@ -1,6 +1,4 @@
 HOST=localhost
-PORT=3000
+PORT=5000
 NODE_ENV=development
-DB_URL =mongodb+srv://admin:<password>@edumentor.5kxd0.mongodb.net/<dbname>?retryWrites=true&w=majority
-DB_USERNAME=edumentorAdmin
-DB_PASSWORD=bfFETIXlVH3cPxHW
+DB_URL=mongodb+srv://edumentorAdmin:WvePMHp8MQUj92xr@edumentor.5kxd0.mongodb.net/<dbname>?retryWrites=true&w=majority

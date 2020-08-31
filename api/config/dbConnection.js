@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 import logger from "./winstonlog";
 
 class Database {
-  constructor(host) {
+  constructor() {
     this.mongoose = mongoose;
+    this.mongoose.Promise = global.Promise;
     this.options = { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true };
-    this.connect(host);
   }
 
   /**
@@ -13,8 +13,8 @@ class Database {
    * @description - Initiates a DB connection based on provided URI
   */
   async connect(host) {
-    this.mongoose.connect(host, this.options)
-      .then(() => logger.info("Database connected"))
+    await this.mongoose.connect(host, this.options)
+      .then(() => logger.info("Database connected successfully"))
       .catch((error) => logger.info(`Error connecting to Database: ${error}`));
 
     // Close connection on process termination
@@ -25,4 +25,4 @@ class Database {
   }
 }
 
-module.exports = Database;
+export default Database;

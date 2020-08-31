@@ -1,34 +1,24 @@
 import express from "express";
-import dotenv from "dotenv";
 import path from "path";
-import cors from "cors";
-// eslint-disable-next-line no-unused-vars
-import { logger, dbConnection } from "./api/config";
+import loader from "./api/loaders";
+import config from "./api/config";
+import Database from "./api/config/dbConnection";
+import logger from "./api/config/winstonlog";
 
-// initialize new express app
 const app = express();
 
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config();
-}
+// Initialize database connection
+const db = new Database();
+db.connect(config.DbUrl);
 
-app.use(cors());
-app.use(express.json());
+// Initialize app with dependencies and error handlers
+loader.init(app);
 
 // To use other UI routes
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./src/index.html"));
 });
 
-app.use((err, req, res, next) => {
-  logger.info(err.stack);
-  res.status(500);
-  res.render("There was an Error processing your request. Something\"s broken! Check your data and try again", { error: err });
-  next();
-});
-
-const hostname = process.env.HOST;
-const port = process.env.PORT;
-app.listen(port, hostname, (e) => {
-  if (e) { logger.info(e); } else { logger.info(`listening at http://${hostname}:${port}`); }
+app.listen(config.port || 5000, (event) => {
+  if (event) { logger.info(event); } else { logger.info(`listening on port: ${config.port}`); }
 });
