@@ -1,0 +1,48 @@
+{
+  "name": "team-031-group-a-edumentor",
+  "version": "1.0.0",
+  "description": "[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b9e3ff50203446985793bbcbd88c715)](https://app.codacy.com/gh/BuildForSDGCohort2/Team-031-Group-A-EduMentor?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDGCohort2/Team-031-Group-A-EduMentor&utm_campaign=Badge_Grade_Settings)",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "dev": "nodemon index.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --fix --ignore-path .eslintignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuildForSDGCohort2/Team-031-Group-A-EduMentor.git"
+  },
+  "keywords": [],
+  "author": "team-031-group-a",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BuildForSDGCohort2/Team-031-Group-A-EduMentor"
+  },
+  "homepage": "https://github.com/BuildForSDGCohort2/Team-031-Group-A-EduMentor#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.1",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "bcryptjs": "^2.4.3",
+    "convict": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.0",
+    "mongoose": "^5.10.0",
+    "passport": "^0.4.1",
+    "redis": "^3.0.2",
+    "winston": "^3.3.3"
+  }
+}
