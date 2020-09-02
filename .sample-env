@@ -1,4 +1,0 @@
-HOST=localhost
-PORT=3000
-
-DB_URL =mongodb://localhost/CRUD_DB
