@@ -5,9 +5,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <h2>
           Welcome to EduMentor
-        </p>
+        </h2>
+        <p>Online College/University Mentorship Platform</p>
       </header>
     </div>
   );
