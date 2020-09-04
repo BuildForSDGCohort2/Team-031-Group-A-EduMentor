@@ -16,10 +16,10 @@ class User {
     });
     // validate param
     const { error } = signupValidator(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) { return res.status(400).send(error.details[0].message); }
     // check if email already exist
     const checkEmail = await UserDb.findOne({ email: req.body.email });
-    if (checkEmail) return res.status(400).send("Email already exist");
+    if (checkEmail) { return res.status(400).send("Email already exist"); }
     // create a new user
     try {
       const savedUser = await newUser.save();
