@@ -1,8 +1,8 @@
-import express from "express";
+import Express from "express";
 import User from "../controller/userController";
 
-const Router = express.Router();
-Router.use(express.json());
+const Router = Express.Router();
+Router.use(Express.json());
 
 Router.post("/signup", User.createUser);
 
