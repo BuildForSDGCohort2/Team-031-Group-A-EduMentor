@@ -63,7 +63,7 @@ passport.use(
         return cb(null, false, { message: error.details[0].message });
       }
 
-      const checkEmail = await UserDb.findOne({ email: email });
+      const checkEmail = await UserDb.findOne({ email });
       if (checkEmail) {
         return cb(null, false, { statusCode: 409, message: "Email already exist" });
       }
