@@ -1,10 +1,8 @@
 import { ExtractJwt, Strategy } from "passport-jwt";
-import fs from "fs";
-import path from "path";
 import User from "../models/user";
+import config from "./index";
 
-const pathToKey = path.join(__dirname, "..", "..", "id_rsa_pub.pem");
-const PUB_KEY = fs.readFileSync(pathToKey, "utf8");
+const { PUB_KEY } = config;
 
 const options = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
