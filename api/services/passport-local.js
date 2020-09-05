@@ -24,7 +24,7 @@ passport.use(
   "login",
   new Strategy(authFields, async (req, email, password, cb) => {
     try {
-      const user = await UserDb.findOne({ email: email });
+      const user = await UserDb.findOne({ email });
 
       if (!user || !user.password) {
         return cb(null, false, { message: "Incorrect email or password." });
