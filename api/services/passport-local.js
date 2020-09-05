@@ -23,7 +23,7 @@ passport.deserializeUser(async (id, done) => {
 passport.use(
   "login",
   new Strategy(authFields, async (req, email, password, cb) => {
-    try {
+    
       const user = await UserDb.findOne({ email });
 
       if (!user || !user.password) {
@@ -35,8 +35,8 @@ passport.use(
       if (!checkPassword) {
         return cb(null, false, { message: "Incorrect email or password." });
       }
-
-      return cb(null, user, {
+      try {
+      cb(null, user, {
         message: "Logged In Successfully",
       });
     } catch (err) {
@@ -48,7 +48,7 @@ passport.use(
 passport.use(
   "signup",
   new Strategy(authFields, async (req, email, password, cb) => {
-    try {
+    
       const salt = await bcrypt.genSalt(10);
       const hashPassword = await bcrypt.hash(req.body.password, salt);
       // enter param
@@ -67,9 +67,9 @@ passport.use(
       if (checkEmail) {
         return cb(null, false, { statusCode: 409, message: "Email already exist" });
       }
-
+      try {
       const savedUser = await newUser.save();
-      return cb(null, savedUser, {
+      cb(null, savedUser, {
         message: savedUser,
       });
     } catch (err) {
