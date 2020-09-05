@@ -1,0 +1,181 @@
+.covers {
+  position: absolute;
+  width: 1440px;
+  height: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1425px;
+  background-color: white;
+}
+
+.serviceimage {
+  position: relative;
+  width: 488px;
+  height: 100%;
+  float: left;
+  background-color: #3ec6ff;
+}
+
+.image {
+  width: 178.05px;
+  height: 135px;
+  position: relative;
+  margin: 350px 160px;
+  border: 2px solid white;
+}
+
+.services {
+  position: relative;
+  float: right;
+  width: 758px;
+  height: 648px;
+  margin: 50 0;
+  margin-left: 180px;
+}
+
+.services h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.services p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000;
+  margin-top: -25px;
+  margin-left: 50px;
+}
+
+.servicecard {
+  position: relative;
+  width: 756px;
+  height: 542px;
+  margin: 15px 0;
+  display: block;
+  justify-content: center;
+}
+
+.Scard {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+  width: 202px;
+  height: 260px;
+  float: left;
+}
+
+.Scircle {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 0 26px;
+  border-radius: 100%;
+  background-color: #3ec6ff;
+}
+
+.Stext {
+  width: 202px;
+  height: 90px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.h4 {
+  width: 202px;
+  text-align: center;
+  line-height: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  margin-top: -2px;
+  font-size: 20px;
+}
+
+.pa {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  width: 202px;
+  box-sizing: border-box;
+  margin-top: -13px;
+}
+
+.pa .Spa {
+  font-size: 16px;
+  text-align: center;
+  word-wrap: break-word;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ddd;
+  margin-top: -25px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-left: -1px;
+}
+
+@media only screen and (max-width: 480px) {
+  .covers {
+    width: 100%;
+    height: auto;
+    float: none;
+    display: block;
+    justify-content: center;
+    margin-left: -7px;
+    margin-top: 2950px;
+  }
+
+  .serviceimage {
+    display: none;
+  }
+
+  .image {
+    display: none;
+  }
+
+  .services {
+    display: block;
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    justify-content: center;
+    margin: 0 auto;
+    background: white;
+  }
+
+  .servicecard {
+    position: absolute;
+    display: block;
+    margin: 1px auto;
+    width: 100%;
+    background: white;
+    height: auto;
+    justify-content: center;
+  }
+
+  .Scard {
+    display: flex;
+    width: 100%;
+    height: inherit;
+    position: relative;
+    margin: 10px auto;
+    justify-content: center;
+    background: white;
+  }
+
+  .services h3 {
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .services p {
+    text-align: center;
+  }
+}

@@ -1,0 +1,32 @@
+.card {
+  height: 368px;
+  width: 294px;
+  margin: 20px;
+  background-color: #fff3f3;
+}
+
+.circle {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  right: -67px;
+  bottom: 70px;
+  border-radius: 100%;
+  background-color: #3ec6ff;
+}
+
+.card h3 {
+  margin-top: -220px;
+}
+
+.card p {
+  margin-top: -200px;
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    margin: 100px auto;
+    display: block;
+    justify-content: center;
+  }
+}

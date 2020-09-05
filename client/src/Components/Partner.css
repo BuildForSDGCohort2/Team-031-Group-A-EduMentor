@@ -1,0 +1,36 @@
+.Pcover {
+  position: absolute;
+  width: 1440px;
+  height: 180px;
+  top: 2824px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(186, 181, 181, 0.5);
+}
+
+.Pimg {
+  position: relative;
+  width: 126px;
+  height: 70px;
+  border: 1px solid white;
+  margin: 20px;
+  margin-top: 55px;
+}
+
+@media only screen and (max-width: 480px) {
+  .Pcover {
+    width: 100%;
+    height: auto;
+    float: none;
+    display: block;
+    justify-content: center;
+    margin-top: 2856px;
+    margin-left: -9px;
+  }
+
+  .Pimg {
+    margin: auto;
+    margin-top: 20px;
+  }
+}
