@@ -1,0 +1,16 @@
+body {
+  width: 1440px;
+  height: 4006px;
+  background-color: #e6e6e6;
+  margin: 0;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    width: 100%;
+    height: auto;
+    display: block;
+    justify-content: center;
+    background-color: #eee;
+  }
+}

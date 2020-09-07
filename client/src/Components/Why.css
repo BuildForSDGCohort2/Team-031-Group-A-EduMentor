@@ -1,0 +1,83 @@
+.Wcover {
+  width: 1440px;
+  height: 591px;
+  position: absolute;
+  top: 2233px;
+  background-color: #eee;
+}
+
+h1 {
+  text-align: center;
+  margin: 100px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 33px;
+}
+
+.Wcon {
+  width: 1292px;
+  height: 294px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.Wcard {
+  position: relative;
+  height: 294px;
+  width: 293px;
+  margin-right: 30px;
+  margin-top: -19px;
+  background-color: #fff3f3;
+  float: left;
+}
+
+.Wcircle {
+  height: 106px;
+  width: 106px;
+  margin: 40px auto;
+  position: relative;
+  margin-top: 19px;
+  border-radius: 100%;
+  background-color: #3ec6ff;
+}
+
+.Wcard h3 {
+  text-align: center;
+  color: #d6d6d6;
+}
+
+.Wcard p {
+  text-align: center;
+  color: #d6d6d6;
+}
+
+.Wcon h1 {
+  margin: 20px auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .Wcover {
+    width: 100%;
+    height: inherit;
+    float: none;
+    display: block;
+    justify-content: center;
+    margin-top: 1875px;
+  }
+
+  .Wcon {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .Wcard {
+    display: block;
+    height: auto;
+    margin: 20px 50px;
+  }
+}
