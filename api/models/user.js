@@ -43,11 +43,10 @@ const userSchema = new Schema({
   },
   registeredOn: {
     type: Date,
-    default: Date.now(),
+    required: true,
   },
   userType: {
     type: String,
-    default: "user",
     required: true,
   },
   profile: profileSchema,
@@ -56,12 +55,10 @@ const userSchema = new Schema({
   timestamps: true,
 });
 
-// eslint-disable-next-line func-names
 userSchema.methods.encryptPassword = function (password) {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(5), null);
 };
 
-// eslint-disable-next-line func-names
 userSchema.methods.validatePassword = function (password) {
   return bcrypt.compareSync(password, this.password);
 };
