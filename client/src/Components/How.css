@@ -1,0 +1,83 @@
+.cover {
+  position: absolute;
+  width: 1440px;
+  height: 706px;
+  left: 0;
+  top: 725px;
+  background-color: #e6e6e6;
+  text-align: center;
+}
+
+.cover h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 460px;
+  color: #000;
+  margin-top: -180px;
+}
+
+.cover button {
+  width: 230px;
+  height: 55px;
+  background-color: #c4c4c4;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.cover button:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cover button:active {
+  background-color: #c4c4c4;
+  cursor: pointer;
+}
+
+.cover h4 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 5px;
+  color: #000;
+}
+
+.cl {
+  display: flex;
+  justify-content: center;
+  margin-top: -130px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .cover {
+    width: 100%;
+    height: inherit;
+    float: none;
+    display: block;
+    justify-content: center;
+    background-color: #e6e6e6;
+  }
+
+  .cl {
+    width: 100%;
+    display: block;
+    justify-content: center;
+  }
+
+  .cover h3 {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-bottom: -150px;
+  }
+
+  .cover button {
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+}
