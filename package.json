@@ -33,6 +33,7 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
     "convict": "^6.0.0",
