@@ -3,8 +3,7 @@ import config from "../config";
 
 const { PRIV_KEY } = config;
 
-function issueJWT({ _id }) {
-
+const issueJWT = ({ _id }) => {
   const expiresIn = "7d";
 
   const payload = {
