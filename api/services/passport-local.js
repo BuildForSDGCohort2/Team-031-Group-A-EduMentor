@@ -14,9 +14,9 @@ passport.use(
   "signup",
   new Strategy(authFields, async (req, email, password, cb) => {
     // validate param
-    const { error } = signupValidator(req.body);
-    if (error) {
-      return cb(null, false, { message: error.details[0].message });
+    const result = signupValidator(req.body);
+    if (result.error) {
+      return cb(null, false, { message: result.error.details[0].message });
     }
 
     const checkEmail = await UserDb.findOne({ email });
