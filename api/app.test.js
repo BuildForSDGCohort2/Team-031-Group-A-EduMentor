@@ -4,6 +4,7 @@ import app from "./index";
 
 describe("Testing API calls", () => {
   describe("Testing user route", () => {
+    // only assserting the status, could add the returned object
     it("should create a user", () => {
       require(app)
         .post("/user/signup")
