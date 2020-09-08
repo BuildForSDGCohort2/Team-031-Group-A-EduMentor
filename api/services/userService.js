@@ -9,7 +9,9 @@ function createUser(body) {
   return new Promise((resolve, reject) => {
     const { email, password } = body;
     // check if the user already exists
-    if (User.checkField("email", email)) reject(new Error("User exists"));
+    if (User.checkField("email", email)) {
+      reject(new Error("User exists"));
+    }
     // create new user
     const newUser = new User();
     newUser.email = email;
@@ -28,7 +30,9 @@ function getUser(email) {
   return new Promise((resolve, reject) => {
     const user = User.findOne({ email });
 
-    if (!user) reject(new Error("User does not exist"));
+    if (!user) {
+      reject(new Error("User does not exist"));
+    }
 
     resolve(user);
   });
