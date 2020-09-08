@@ -20,6 +20,6 @@ const issueJWT = ({ _id }) => {
     token: `Bearer ${signedToken}`,
     expires: expiresIn,
   };
-}
+};
 
 module.exports.issueJWT = issueJWT;
