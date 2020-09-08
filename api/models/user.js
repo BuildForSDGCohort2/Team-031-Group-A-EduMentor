@@ -66,4 +66,18 @@ userSchema.methods.validatePassword = function (password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-module.exports = model("User", userSchema);
+const User = model("User", userSchema);
+
+/**
+ *
+ * @param {String} field
+ * @param {String} value
+ * @desc - Checks the existence of a record with the given field value and returns it
+ */
+// eslint-disable-next-line func-names
+userSchema.statics.checkField = async function (field, value) {
+  const record = await User.findOne({ [`${field}`]: value });
+  return record;
+};
+
+export default User;

@@ -1,7 +1,6 @@
 import app from "./api";
 import config from "./api/config";
 import logger from "./api/config/winstonlog";
-import userRouter from "./api/route/userRoute";
 
 /**
  *
