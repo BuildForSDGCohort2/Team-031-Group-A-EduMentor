@@ -2,10 +2,10 @@ import express from "express";
 import userRoutes from "./userRoute";
 
 function getRoutes() {
-  const Router = express.Router();
-  Router.use("/user", userRoutes);
+  const router = express.Router();
+  router.use("/user", userRoutes);
 
-  return Router;
+  return router;
 }
 
 export default getRoutes;
