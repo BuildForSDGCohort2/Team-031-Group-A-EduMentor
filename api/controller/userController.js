@@ -1,35 +1,76 @@
 /* eslint-disable class-methods-use-this */
-import bcrypt from "bcryptjs";
-import UserDb from "../models/user";
-import signupValidator from "../middleware/validator";
+import passport from "passport";
+import utils from "../lib/utils";
 import logger from "../config/winstonlog";
 
-class User {
-  static async createUser(req, res) {
-    // hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashPassword = await bcrypt.hash(req.body.password, salt);
-    // enter param
-    const newUser = new UserDb({
-      email: req.body.email,
-      password: hashPassword,
-    });
-    // validate param
-    const { error } = signupValidator(req.body);
-    if (error) { return res.status(400).send(error.details[0].message); }
-    // check if email already exist
-    const checkEmail = await UserDb.findOne({ email: req.body.email });
-    if (checkEmail) { return res.status(400).send("Email already exist"); }
-    // create a new user
-    try {
-      const savedUser = await newUser.save();
-      res.send(savedUser);
-    } catch (err) {
-      res.status(400).send(err);
-    }
+const getToken = (user, statusCode, res) => {
+  const tokenObject = utils.issueJWT(user);
+  const { token, expires } = tokenObject;
 
-    logger.info("created new user");
+  res.status(statusCode).send({
+    status: "success",
+    token,
+    expires,
+    data: {
+      user,
+    },
+  });
+};
+class User {
+  static async createUser(req, res, next) {
+    passport.authenticate(
+      "signup",
+      { session: false },
+      async (err, user, info) => {
+        try {
+          if (err || !user) {
+            const { statusCode = 400, message } = info;
+            return res.status(statusCode).send({
+              status: "error",
+              error: {
+                message,
+              },
+            });
+          }
+          res.send({ success: true, user });
+          logger.info("created new user");
+        } catch (error) {
+          res.status(400).send(error);
+        }
+        return false;
+      }
+    )(req, res, next);
+
     return false;
+  }
+
+  static async loginUser(req, res, next) {
+    passport.authenticate(
+      "login",
+      { session: false },
+      async (err, user, info) => {
+        try {
+          if (err || !user) {
+            const { statusCode = 400, message } = info;
+            return res.status(statusCode).send({
+              status: "error",
+              error: {
+                message,
+              },
+            });
+          }
+          getToken(user, 200, res);
+          logger.info("User Successfully Logged In");
+        } catch (error) {
+          res.status(400).send(error);
+        }
+        return false;
+      }
+    )(req, res, next);
+  }
+
+  static async protectedRoute(req, res) {
+    res.send("Your Authorization is confirmed!");
   }
 }
 
