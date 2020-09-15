@@ -64,7 +64,7 @@
         color: white;
         background: transparent;
     }
-    .nav-links button:hover,
+    /* .nav-links button:hover, */
     .nav-links button:active {
         background: #00b2f8;
         /* color: #292929; */
