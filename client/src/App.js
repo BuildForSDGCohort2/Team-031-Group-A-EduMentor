@@ -1,17 +1,24 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Switch,
+} from "react-router-dom";
+import MainNavigation from "./component/Navigation/MainNavigation";
+
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h2>
-          Welcome to EduMentor
-        </h2>
-        <p>Online College/University Mentorship Platform</p>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <MainNavigation />
+            <Switch>
+                <Route path="/" exact></Route>
+                <Redirect to="/" />
+            </Switch>
+        </Router>
+    );
+};
 
 export default App;
