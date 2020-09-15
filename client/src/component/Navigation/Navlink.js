@@ -2,7 +2,7 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import "./Navlinks.css";
+import "./Navlink.css";
 
 const NavLinks = (props) => {
     return (
