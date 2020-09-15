@@ -24,7 +24,7 @@
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-    background: #f8df00;
+    background: #cbf800;
     border-color: #292929;
     color: #292929;
 }
@@ -45,7 +45,7 @@
 .nav-links button:hover,
 .nav-links button:active {
     background: #292929;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 @media (min-width: 768px) {
@@ -66,7 +66,7 @@
     }
     .nav-links button:hover,
     .nav-links button:active {
-        background: #f8df00;
-        color: #292929;
+        background: #00b2f8;
+        /* color: #292929; */
     }
 }
