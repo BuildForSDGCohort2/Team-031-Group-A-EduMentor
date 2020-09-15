@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import MainHeader from "./MainHeader";
-import NavLinks from "./Navlinks";
+import NavLinks from "./Navlink";
 
 import "./MainNavigation.css";
 

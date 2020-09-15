@@ -11,10 +11,10 @@ const NavLinks = (props) => {
                 <NavLink to="/">HOME</NavLink>
             </li>
             <li>
-                <NavLink to="/ui/news">BLOG</NavLink>
+                <NavLink to="/blog">BLOG</NavLink>
             </li>
             <li>
-                <NavLink to="/news/new">HOW IT WORKS </NavLink>
+                <NavLink to="/blog">HOW IT WORKS </NavLink>
             </li>
             <li>
                 <NavLink to="/auth">BECOME A MENTOR</NavLink>

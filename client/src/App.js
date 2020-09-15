@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import MainNavigation from "./component/Navigation/MainNavigation";
 
+import MainLanding from "./component/Main/MainLanding";
+
 import "./App.css";
 
 const App = () => {
@@ -14,7 +16,9 @@ const App = () => {
         <Router>
             <MainNavigation />
             <Switch>
-                <Route path="/" exact></Route>
+                <Route path="/" exact>
+                    <MainLanding />
+                </Route>
                 <Redirect to="/" />
             </Switch>
         </Router>

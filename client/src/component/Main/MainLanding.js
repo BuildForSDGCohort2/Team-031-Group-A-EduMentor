@@ -1,7 +1,7 @@
 import React from "react";
-import "./index.css";
+import "./MainLanding.css";
 
-function App() {
+function MainLanding() {
     return (
         <div className="App">
             <header className="App-header">
@@ -12,4 +12,4 @@ function App() {
     );
 }
 
-export default App;
+export default MainLanding;
